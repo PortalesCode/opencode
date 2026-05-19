@@ -53,7 +53,7 @@ En el **primer mensaje** de cada sesión:
 
      | Situación | Respuesta |
      |-----------|-----------|
-     | **No hay repo git** | "No detecté repo git en la raíz. ¿Querés inicializarlo?" → Si acepta → Task(Maestro-de-Git, init) |
+      | **No hay repo git** | "No detecté repo git en la raíz. ¿Querés inicializarlo?" → Si acepta → Task(Maestro-de-Git, init) └── Post-init: "Hay un `.git/` dentro de `.opencode/` (del clone original). ¿Lo borro para que git no lo trate como submódulo?" → Si acepta → Task(Maestro-de-Git, remove-opencode-git) |
      | **Hay repo** pero sin hooks configurados | "¿Configuro los hooks del ecosistema en `.opencode/hooks/`?" → Si acepta → Task(Maestro-de-Git, setup-hooks) |
      | **Hay repo** con hooks ya configurados | Sigo al paso 4 |
      | **Hay repo** pero hooks apuntan a otro lado | "Los hooks apuntan a otro lado. ¿Los redirijo a `.opencode/hooks/`?" |

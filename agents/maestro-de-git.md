@@ -37,7 +37,7 @@ Vía Task() desde Núcleo o Comodín:
 
 | Campo | Descripción |
 |-------|-------------|
-| `operacion` | Qué hacer: `commit`, `init`, `push`, `pull`, `status`, `log`, `diff`, `branch`, `setup-hooks` |
+| `operacion` | Qué hacer: `commit`, `init`, `push`, `pull`, `status`, `log`, `diff`, `branch`, `setup-hooks`, `remove-opencode-git` |
 | `contexto` | Resumen de qué se hizo (para mensajes de commit) |
 | `archivos` | Lista de archivos involucrados (opcional) |
 | `extra` | Parámetros adicionales (mensaje de commit, nombre de rama) |
@@ -98,6 +98,13 @@ Configura `core.hooksPath` para que git use los hooks del ecosistema (`.opencode
 2. Si ya apunta a `.opencode/hooks` → reporto "ya configurado"
 3. Si no → ejecuto `git config core.hooksPath .opencode/hooks`
 4. Devuelvo confirmación
+
+### `remove-opencode-git`
+Elimina el `.git/` dentro de `.opencode/` para que el repo raíz no lo trate como submódulo.
+
+1. Verifico que `.opencode/.git/` exista
+2. Si existe → lo elimino con `Remove-Item -Recurse -Force .opencode/.git/`
+3. Devuelvo confirmación
 
 ---
 
