@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "last_updated": null,
+  "tecnologias": {
+    "consolidadas": [],
+    "exploracion": [],
+    "descartadas": []
+  },
+  "_description": "Registro de tecnologías del proyecto. Vision (agente primario) las clasifica según feedback del usuario. explore-tecnologias.json + VISION.md = la visión completa. Vision Tracker cruza esto contra GRAPH.json post-commit.",
+  "_niveles": {
+    "consolidadas": ["produccion", "estable", "madura"],
+    "exploracion": ["evaluacion", "prototipo", "prueba-concepto"],
+    "descartadas": ["no-apto", "reemplazada", "incompatible"]
+  }
+}

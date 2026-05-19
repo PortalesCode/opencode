@@ -42,18 +42,19 @@ Antes de leer GRAPH.json, antes de inferir nada, antes de producir output:
 
 | Situación | Qué hago |
 |-----------|----------|
-| VISION.md **no existe** | ❌ Detengo evaluación. Escribo GRAVITY_STATE.json con status `vision_missing`. No invento visión. |
-| VISION.md **existe pero está vacío** | ❌ Detengo evaluación. Escribo GRAVITY_STATE.json con status `vision_missing`. |
-| VISION.md **existe con contenido** | ✅ Continuo con el flujo normal. |
+| VISION.md **no existe** | ❌ Detengo. Escribo status `vision_missing`. No invento visión. |
+| VISION.md **existe pero está vacío** | ❌ Detengo. Escribo status `vision_missing`. |
+| VISION.md **solo tiene plantilla** (headers + placeholders) | ⏸️ Escribo status `vision_template`. Sugiero hablar con @Vision. |
+| VISION.md **existe con contenido real** | ✅ Continuo con el flujo normal. |
 
-**Output cuando no hay visión:**
+**Output cuando no hay visión o solo plantilla:**
 
 ```json
 {
   "generated": "2026-05-19T15:30:00Z",
-  "status": "vision_missing",
+  "status": "vision_missing | vision_template",
   "can_evaluate": false,
-  "message": "VISION.md no está inicializado o está vacío. No se evalúa gravedad evolutiva. La visión debe definirla el usuario con 'visión: {texto}' en Núcleo."
+  "message": "VISION.md no está inicializado o solo tiene la plantilla. Hablá con @Vision para definir la visión del proyecto."
 }
 ```
 
@@ -69,10 +70,25 @@ Antes de leer GRAPH.json, antes de inferir nada, antes de producir output:
 - Tipos de cambio predominantes (feat, fix, refactor...)
 - Frecuencia de actividad
 
+### NO leo IDEA_GRAPH.json
+Ese archivo es dominio de **Cartógrafo**. Yo solo trabajo con:
+- GRAPH.json (realidad de commits)
+- VISION.md (visión humana, con secciones consolidado/exploración)
+- explore-tecnologias.json (tecnologías y su estado según el usuario)
+- GRAVITY_STATE.json anterior (mi propio output)
+
 ### De `.opencode/graph/VISION.md`
-- La visión ideal del proyecto (definida por el usuario)
-- Los objetivos definidos
-- Las prioridades declaradas
+- **Propósito** del proyecto
+- **Features consolidadas** — lo que el usuario dice que ya está implementado
+- **Features en exploración** — lo que el usuario está evaluando
+- **Stack consolidado** — tecnologías que el usuario considera estables
+- **Stack en exploración** — tecnologías que el usuario quiere probar
+- **Stack descartado** — tecnologías que el usuario ya descartó
+
+### De `.opencode/graph/explore-tecnologias.json`
+- Tecnologías consolidadas vs en exploración vs descartadas
+- Nivel de cada una (producción, evaluación, no-apto)
+- Para contrastar: "el stack consolidado según visión vs el stack real según commits"
 
 ### De `.opencode/graph/GRAVITY_STATE.json` (versión anterior)
 - El estado previo para detectar cambios y evolución
@@ -129,14 +145,17 @@ Antes de leer GRAPH.json, antes de inferir nada, antes de producir output:
 | Un solo módulo tocado repetidamente | Foco actual del desarrollador |
 | Muchos módulos tocados en un commit | Cambio transversal |
 
-### Al cruzar con VISION.md
+### Al cruzar con VISION.md + explore-tecnologias.json
 
 | Situación | Qué pongo en GRAVITY_STATE |
 |-----------|---------------------------|
-| La visión dice "priorizar modulo X" y hay commits en X | "current_focus": ["X"] ✅ alineado |
-| La visión dice "priorizar X" y los commits están en Y | "current_focus": ["Y"], "risks": ["desviación de visión hacia Y"] |
-| La visión menciona features que no aparecen en GRAPH.json | "unaddressed_vision_items": ["feature Z"] |
-| Mucha actividad sin commits relacionados a visión | "risk_level": "medium", "risks": ["actividad sin dirección de visión"] |
+| La visión dice "priorizar modulo X" y hay commits en X | `current_focus: ["X"]` ✅ alineado |
+| La visión dice "priorizar X" y los commits están en Y | `current_focus: ["Y"]`, `risks: ["desviación de visión hacia Y"]` |
+| La visión menciona features que no aparecen en GRAPH.json | `unaddressed_vision_items: ["feature Z"]` |
+| Mucha actividad sin commits relacionados a visión | `risk_level: "medium"`, `risks: ["actividad sin dirección de visión"]` |
+| Stack consolidado según visión NO aparece en GRAPH.json | `risks: ["stack consolidado sin commits: React 18 no implementado"]` |
+| Stack en exploración según visión SÍ aparece en GRAPH.json | `notes: ["tecnología en exploración ya tiene commits: Astro"]` |
+| Stack descartado según visión aparece en GRAPH.json | `risks: ["stack descartado con commits activos: Svelte"]` |
 
 ---
 
@@ -156,4 +175,6 @@ Antes de leer GRAPH.json, antes de inferir nada, antes de producir output:
 - ❌ **No ejecutar comandos**
 - ❌ **No modificar código del proyecto**
 - ❌ **No tocar GRAPH.json ni VISION.md** — solo leo esos
+- ❌ **No tocar IDEA_GRAPH.json** — ese es dominio exclusivo de Cartógrafo
+- ❌ **No tocar explore-tecnologias.json** — solo lo leo; lo escribe Vision
 - ❌ **No inventar ni inferir la visión** — si VISION.md no existe o está vacío, reportarlo como `vision_missing`, no crearlo

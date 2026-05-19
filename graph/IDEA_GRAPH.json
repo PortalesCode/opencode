@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "last_updated": null,
+  "ideas": [],
+  "connections": [],
+
+  "_description": "Registro de ideas exploradas durante el desarrollo del proyecto. No contiene visión ni tracking. Solo mapea el pensamiento: qué ideas aparecieron, cómo mutaron, cuáles se descartaron y cuáles cristalizaron en features reales.",
+  "_statuses": {
+    "semilla": "Idea recién aparecida, sin refinar. Solo existe en conversación.",
+    "desambiguada": "Idea clarificada tras pasar por Interprete-Prompt.",
+    "en-ejecución": "Idea que entró al pipeline GPT: y está siendo implementada.",
+    "cristalizada": "Idea que llegó a commit. Feature real en el proyecto.",
+    "descartada": "Idea que se abandonó explícitamente. Se guarda el motivo.",
+    "dormida": "Idea que se exploró pero no se descartó ni implementó. Puede revivir."
+  },
+  "_connection_types": {
+    "bifurca": "Una idea se divide en dos o más direcciones",
+    "refina": "Una idea se vuelve más específica",
+    "contradice": "Una idea contradice a otra",
+    "revive": "Una idea dormida o descartada vuelve a considerarse",
+    "descarta": "Una idea deriva en su abandono",
+    "cristaliza": "Una idea se convierte en feature concreto"
+  },
+  "_invocadores": {
+    "Núcleo": "registrar ideas que surgen en conversación",
+    "Interprete-Prompt": "registrar cuando el usuario elige una opción (desambiguada)",
+    "Interprete-GPT": "registrar cuando una idea entra al pipeline formal (en-ejecución)"
+  }
+}

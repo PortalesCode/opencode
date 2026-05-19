@@ -1,4 +1,23 @@
 {
-  "detected": [],
-  "inferred": []
+  "version": "1.0",
+  "last_updated": null,
+  "stack": {
+    "lenguajes": [],
+    "frameworks": [],
+    "herramientas": [],
+    "base_datos": [],
+    "infraestructura": []
+  },
+  "_description": "Stack tecnológico REAL del proyecto (detectado en el código, no deseado). Lo mantiene Vanguardista consultando el proyecto y delegando escritura a Ejecutor-Quirúrgico.",
+  "_campos_tecnologia": {
+    "nombre": "nombre de la tecnología",
+    "version": "versión detectada",
+    "categoria": "lenguaje | framework | herramienta | base_datos | infra",
+    "uso_principal": "para qué se usa en el proyecto",
+    "detectado_en": ["rutas donde se encontró evidencia"]
+  },
+  "_diferencia_con_explore-tecnologias": {
+    "STACK.json": "lo que REALMENTE está en el proyecto (Vanguardista)",
+    "explore-tecnologias.json": "lo que el usuario QUIERE explorar (Vision)"
+  }
 }

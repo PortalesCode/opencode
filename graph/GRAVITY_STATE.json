@@ -1,6 +1,6 @@
 {
   "generated": "2026-05-19T00:00:00Z",
-  "status": "vision_missing",
+  "status": "vision_template",
   "can_evaluate": false,
-  "message": "VISION.md no inicializado. Usá 'visión: {texto}' en Núcleo para definir la visión."
+  "message": "VISION.md tiene una plantilla lista pero sin contenido. Hablá con @Vision para definir la visión del proyecto."
 }

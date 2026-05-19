@@ -56,8 +56,11 @@ No pregunto nada. No opino. No sugiero. Ejecuto.
 |-------|-----------|
 | Procesar commits y actualizar GRAPH.json | `Chronicle` |
 | Cruzar realidad vs visión, actualizar GRAVITY_STATE | `Vision Tracker` |
+| Mapear ideas y conexiones en IDEA_GRAPH | `Cartógrafo` |
 | Actualizar archivos en .opencode/graph/ | `Ejecutor-Quirúrgico` |
 | Escaneo rápido del repo | `Context-Speed` |
+| Orquestar cambios pequeños/medianos | `Mini-Orchestrator` |
+| Definir y estructurar visión | `Vision` (primario) |
 | Alimentar registro de proyectos | `project-feeder` |
 | Interpretar ideas vagas | `Interprete-Prompt` |
 | Procesar recomendaciones (GPT/promt:) | `Interprete-GPT` |

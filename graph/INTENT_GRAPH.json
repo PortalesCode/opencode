@@ -1,5 +1,19 @@
 {
-  "version": 1,
-  "nodos": [],
-  "aristas": []
+  "version": "1.0",
+  "last_updated": null,
+  "intents": [],
+  "connections": [],
+  "_description": "Registro de patrones de lenguaje del usuario. Cómo pide las cosas, cómo evolucionan sus intents. Lo mantienen Interprete-Prompt (ideas vagas) e Interprete-GPT (recomendaciones).",
+  "_campos_intent": {
+    "pattern": "patrón de lenguaje detectado (ej: 'mejorar {algo}', 'agregar {feature}')",
+    "category": "feature | refactor | fix | exploration | question",
+    "count": "veces que apareció este patrón",
+    "first_seen": "ISO timestamp",
+    "last_seen": "ISO timestamp",
+    "typical_resolution": "cómo se resolvió típicamente (promt:, GPT:, implementa)"
+  },
+  "_dueños": {
+    "Interprete-Prompt": "registra patrones cuando recibe ideas vagas (promt:)",
+    "Interprete-GPT": "registra patrones cuando procesa recomendaciones (GPT:)"
+  }
 }
