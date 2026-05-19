@@ -1,0 +1,10 @@
+#!/bin/sh
+# post-commit hook
+# Se dispara después de CADA git commit, sin importar quién lo hizo
+# (vos manualmente, o el pipeline vía Maestro-de-Git).
+# 
+# Procesa el commit y actualiza .ai-devops/GRAVITY_STATE.json
+# vía Comodín → Chronicle → Vision Tracker.
+
+REPO_PATH=$(git rev-parse --show-toplevel)
+opencode run --agent comodin "procesá el último commit en $REPO_PATH"
