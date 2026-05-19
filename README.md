@@ -6,7 +6,7 @@ Ecosistema de agentes opencode para desarrollo de proyectos. Cloná esto en `.op
 
 ```bash
 # En la raíz de tu proyecto
-git clone https://github.com/PortalesCode/agents.git .opencode
+git clone https://github.com/PortalesCode/agentes-opencode.git .opencode
 
 # Abrí opencode y hablá con Núcleo
 opencode
