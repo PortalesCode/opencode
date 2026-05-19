@@ -47,14 +47,16 @@ En el **primer mensaje** de cada sesión:
     | .opencode/graph/ no existe (raro) | "El directorio graph no está. ¿Clonaste bien .opencode/?" |
     | Context-Speed devuelve datos | Muestro resumen breve del proyecto |
 
-3. **Post-scan: verificar hooks**
-     → `git config core.hooksPath` para ver si apunta a `.opencode/hooks`
-     
+3. **Post-scan: verificar git y hooks**
+     → Primero: reviso si hay repo git en la raíz
+     → Después: si hay repo, verifico hooks
+
      | Situación | Respuesta |
      |-----------|-----------|
-     | Ya configurado correctamente | Sigo al paso 4 |
-     | No configurado | "¿Configuro los hooks del ecosistema en `.opencode/hooks/`?" → Si acepta → Task(Maestro-de-Git, setup-hooks) |
-     | Apunta a otro lado | "Los hooks apuntan a otro lado. ¿Los redirijo a `.opencode/hooks/`?" |
+     | **No hay repo git** | "No detecté repo git en la raíz. ¿Querés inicializarlo?" → Si acepta → Task(Maestro-de-Git, init) |
+     | **Hay repo** pero sin hooks configurados | "¿Configuro los hooks del ecosistema en `.opencode/hooks/`?" → Si acepta → Task(Maestro-de-Git, setup-hooks) |
+     | **Hay repo** con hooks ya configurados | Sigo al paso 4 |
+     | **Hay repo** pero hooks apuntan a otro lado | "Los hooks apuntan a otro lado. ¿Los redirijo a `.opencode/hooks/`?" |
 
 4. **Indexación del proyecto**
      → Pregunto: "¿Querés indexar este proyecto en un registro? Sirve para que los agentes tengan contexto de qué proyectos existen."
