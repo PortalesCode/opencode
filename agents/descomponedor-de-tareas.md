@@ -68,23 +68,23 @@ Vía Task() desde Núcleo o Comodín:
 ```
 ## 📋 GRUPOS DE EJECUCIÓN
 
-### 🔵 Ejecutor-Ciego #1 — Feature: USER
+### 🔵 Ejecutor-Quirúrgico #1 — Feature: USER
 ├── T1: Crear modelo User
 ├── T2: UserService (depende de T1)
 └── T6: Refactor User model (mismo archivo que T1)
 
-### 🔵 Ejecutor-Ciego #2 — Feature: ACCOUNT
+### 🔵 Ejecutor-Quirúrgico #2 — Feature: ACCOUNT
 ├── T3: Crear modelo Account
 └── T4: AccountService (depende de T3)
 
 ### ⚡ PARALELO REAL
-├── Ejecutor-Ciego #1 → User
-└── Ejecutor-Ciego #2 → Account
+├── Ejecutor-Quirúrgico #1 → User
+└── Ejecutor-Quirúrgico #2 → Account
     Arrancan al mismo tiempo 🚀
 
 ### 🔒 SECUENCIAL post-paralelo
 ├── T5: EmailService (usa User y Account)
-    Espera a Ejecutor-Ciego #1 y #2
+    Espera a Ejecutor-Quirúrgico #1 y #2
 ```
 
 ---
@@ -110,7 +110,7 @@ Vía Task() desde Núcleo o Comodín:
 - ✅ **Poner límites explícitos** (qué NO incluye cada tarea)
 - ✅ **Analizar paralelización**: detectar qué puede ir en paralelo
 - ✅ **Detectar conflictos por archivo compartido**
-- ✅ **Agrupar por feature**: mismo feature → mismo Ejecutor-Ciego en secuencia
+- ✅ **Agrupar por feature**: mismo feature → mismo Ejecutor-Quirúrgico en secuencia
 - ❌ **Nunca separar tareas cohesivas** — mismo feature, mismo ejecutor
 - ❌ **No incluir archivos de .opencode/ en las tareas** — esa es la casa de los agentes, no el proyecto
 - ❌ **No escribir nada en el proyecto**

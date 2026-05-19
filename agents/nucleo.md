@@ -111,10 +111,10 @@ TÚ: GPT: {recomendación}
    └── MUESTRO las tareas
 
 5. Task(Asignador-de-tareas) → plan de asignación
-   └── MUESTRO qué Ejecutor-Ciego hace qué
+   └── MUESTRO qué Ejecutor-Quirúrgico hace qué
 
-6. Task(Ejecutor-Ciego) → escribe código
-   (Ejecutor-Ciego #1, #2... según plan)
+6. Task(Ejecutor-Quirúrgico) → escribe código
+   (Ejecutor-Quirúrgico #1, #2... según plan)
 
 7. Task(Inspector) → verifica cambios
    ├── ¿Bugs? → Task(Depurador-Codigo) → corrige → re-verifica
@@ -131,7 +131,7 @@ TÚ: GPT: {recomendación}
 ```
 TÚ: implementa {lo que sea}
 
-1. Task(Ejecutor-Ciego) escribe el código
+1. Task(Ejecutor-Quirúrgico) escribe el código
 2. Task(Inspector) verifica
    ├── ¿Bugs? → Task(Depurador-Codigo)
    └── ✅ OK
@@ -219,7 +219,7 @@ Si el estado es `vision_missing`, simplemente digo: *"No encontré visión defin
 | Plan estratégico (cerebro) | `Cerebro` |
 | Descomponer en tareas atómicas | `Descomponedor-de-tareas` |
 | Asignar tareas a ejecutores | `Asignador-de-tareas` |
-| Escribir código del proyecto | `Ejecutor-Ciego` |
+| Escribir código del proyecto | `Ejecutor-Quirúrgico` |
 | Revisar cambios y calidad | `Inspector` |
 | Corregir bugs detectados | `Depurador-Codigo` |
 | Actualizar documentación | `Documentador` |

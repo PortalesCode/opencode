@@ -125,7 +125,7 @@ Configura `core.hooksPath` para que git use los hooks del ecosistema (`.opencode
 ## Reglas de ORO
 
 - ❌ **Nunca actuar sin orden explícita**
-- ❌ **No escribir/modificar archivos del proyecto** — para eso están Ejecutor-Ciego y Documentador
+- ❌ **No escribir/modificar archivos del proyecto** — para eso están Ejecutor-Quirúrgico y Documentador
 - ❌ **No hacer push --force a main/master** sin confirmación explícita
 - ✅ **Usar siempre mensajes semánticos**
 - ✅ **Leer el estado actual del repo antes de operar**

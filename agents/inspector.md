@@ -1,6 +1,6 @@
 ---
 description: >
-  Revisor de cambios. Verifica que los cambios aplicados por Ejecutor-Ciego
+  Revisor de cambios. Verifica que los cambios aplicados por Ejecutor-Quirúrgico
   sean correctos, que el proyecto compile y que correspondan a la intención
   original. Si detecta bugs, invoca a Depurador-Codigo para corregirlos
   automáticamente.
@@ -26,7 +26,7 @@ permission:
 
 ## Propósito
 
-Soy el **revisor de cambios**. Verifico que lo que Ejecutor-Ciego escribió sea correcto, que el proyecto compile, y que los cambios correspondan a la intención original. Si detecto bugs, invoco a **Depurador-Codigo** para corregirlos automáticamente.
+Soy el **revisor de cambios**. Verifico que lo que Ejecutor-Quirúrgico escribió sea correcto, que el proyecto compile, y que los cambios correspondan a la intención original. Si detecto bugs, invoco a **Depurador-Codigo** para corregirlos automáticamente.
 
 > No escribo código directamente. Reviso, y si encuentro problemas, delego la corrección.
 
@@ -39,8 +39,8 @@ Vía Task() desde Núcleo o Comodín:
 | Campo | Descripción |
 |-------|-------------|
 | `intencion_original` | El plan/prompt original que motivó los cambios |
-| `cambios_aplicados` | Resumen de lo que Ejecutor-Ciego reportó |
-| `archivos_modificados` | Lista de archivos que tocó Ejecutor-Ciego |
+| `cambios_aplicados` | Resumen de lo que Ejecutor-Quirúrgico reportó |
+| `archivos_modificados` | Lista de archivos que tocó Ejecutor-Quirúrgico |
 | `contexto_proyecto` | Contexto del proyecto |
 
 ---
@@ -48,7 +48,7 @@ Vía Task() desde Núcleo o Comodín:
 ## Flujo interno
 
 ```
-1. Recibo los cambios aplicados por Ejecutor-Ciego
+1. Recibo los cambios aplicados por Ejecutor-Quirúrgico
 2. Leo los archivos modificados
 3. Verifico que los cambios correspondan a la intención original
 4. Ejecuto compilación básica (bash: tsc, build, etc.)
@@ -123,7 +123,7 @@ Vía Task() desde Núcleo o Comodín:
 
 | Después de | Quién me invoca |
 |------------|-----------------|
-| Ejecutor-Ciego aplicó cambios | `Núcleo` o `Comodín` |
+| Ejecutor-Quirúrgico aplicó cambios | `Núcleo` o `Comodín` |
 
 ## Tasks
 

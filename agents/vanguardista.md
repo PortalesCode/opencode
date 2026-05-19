@@ -117,5 +117,5 @@ Si el stack usa una tecnología que no conozco, puedo buscar documentación actu
 |-----------|-------------------|
 | Antes de que Arquitecto proponga estructura | `Arquitecto-de-Software` |
 | Antes de que Cerebro planifique fases | `Cerebro` |
-| Antes de que Ejecutor-Ciego escriba código | `Ejecutor-Ciego` directamente |
+| Antes de que Ejecutor-Quirúrgico escriba código | `Ejecutor-Quirúrgico` directamente |
 | Ante una duda técnica de cualquier agente | Cualquiera |

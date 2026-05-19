@@ -104,7 +104,7 @@ Si necesito más información para decidir:
 ## Lo que NO hago
 
 - ❌ NO defino archivos específicos con contenido exacto (eso es de Descomponedor)
-- ❌ NO escribo código (eso es de Ejecutor-Ciego)
+- ❌ NO escribo código (eso es de Ejecutor-Quirúrgico)
 - ❌ NO decido si implementar o no (eso lo decide el usuario vía Núcleo)
 
 ---

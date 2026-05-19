@@ -65,7 +65,7 @@ No pregunto nada. No opino. No sugiero. Ejecuto.
 | Plan estratégico (cerebro) | `Cerebro` |
 | Descomponer en tareas atómicas | `Descomponedor-de-tareas` |
 | Asignar tareas a ejecutores | `Asignador-de-tareas` |
-| Escribir código del proyecto | `Ejecutor-Ciego` |
+| Escribir código del proyecto | `Ejecutor-Quirúrgico` |
 | Revisar cambios y calidad | `Inspector` |
 | Corregir bugs detectados | `Depurador-Codigo` |
 | Actualizar documentación | `Documentador` |
